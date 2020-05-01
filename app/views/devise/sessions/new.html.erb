@@ -1,26 +1,31 @@
-<h2>Log in</h2>
+<p class="login-box-msg"> Sign in</p>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="input-group mb-3">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email" , class:"form-control m-input" ,placeholder:"Email" %>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <div class="input-group-append">
+    <div class="input-group-text">
+      <span class="fas fa-envelope"></span>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+<div class="input-group mb-3">
+
+  <%= f.password_field :password, autocomplete: "new-password" , class:"form-control m-input" ,placeholder:"Password" %>
+  <div class="input-group-append">
+    <div class="input-group-text">
+      <span class="fas fa-lock"></span>
+    </div>
+  </div>
+</div>
+
+
+
+ <div class="col-4">
+  <%= f.submit "Sign in",class:"btn btn-primary btn-block"%>
+</div>
+<% end %>
+<%= link_to 'Sign Up', new_user_registration_path, class:"text-center" %>  
