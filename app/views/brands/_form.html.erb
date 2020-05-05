@@ -1,0 +1,20 @@
+<%= form_with(model: brand, local: true) do |form| %>
+  <% if brand.errors.any? %>
+<div class="alert alert-danger" role="alert">
+      <ul>
+        <% brand.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card-body">
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name,class:"form-control",placeholder:"categoryName" %>
+  </div>
+  <div class="col-4">
+    <%= form.submit class:"btn btn-primary btn-block" %>
+  </div>
+</div>
+<% end %>

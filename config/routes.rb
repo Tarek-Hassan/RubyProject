@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :products
+  resources :brands
+  resources :categories
   devise_for :users
   authenticated :user do
     root to: 'home#index', as: :authenticated_root

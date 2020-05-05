@@ -1,13 +1,9 @@
+
 <div class="content-header">
   <div class="container-fluid">
-      <% if(notice)%>
-    <div class="alert alert-info" role="alert">
-      <%= notice %>
-    </div>
-    <% end%>
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0 text-dark">Home Page</h1>
+        <h1 class="m-0 text-dark"> Brand Details</h1>
       </div>
     </div>
   </div>
@@ -17,10 +13,14 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="card">
-         
+             <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
           <div class="card-body">
-            <span>home#index</span>
+          <p>
+  <strong>Category Name:</strong>
+  <%= @brand.name %>
+</p>
+        <%= link_to 'HOme', brands_path %>
           </div>
         </div>
       </div>
