@@ -21,6 +21,7 @@
     <%= form.label :description %>
     <%= form.text_area :description ,class:"form-control",placeholder:"Description"%>
   </div>
+
   <div class="form-group">
     <% if(@product.images.attached?) %>
     <div class="card-deck my-2 float-right" width="460" height="345">
@@ -50,6 +51,7 @@
       <%= form.label :category_id %>
       <%= form.select :category_id ,options_for_select( cities_array , product.brand_id),{},{class:"form-control"}%>
   </div>
+  
   <div class="form-group">
       <% cities_array = @brands .map { |brand| [brand.name, brand.id] } %>
       <%= form.label :brand_id %>

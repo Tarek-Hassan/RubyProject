@@ -4,13 +4,15 @@ ActiveAdmin.register Product do
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   # Uncomment all parameters which should be permitted for assignment
   
+  # permit_params :title, :description, :price, :in_Stock, :category_id, :brand_id, images[]
   permit_params :title, :description, :price, :in_Stock, :category_id, :brand_id, :images
   
   form do |f|
     f.semantic_errors # shows errors on :base
     f.inputs          # builds an input field for every attribute
     f.inputs do 
-      f.input :images, as: :file,input_html: {multiple: true}
+      # f.input :images, as: :file,input_html: {multiple: true}
+      f.input :images, as: :file
     end
     f.actions         # adds the 'Submit' and 'Cancel' buttons
   end
@@ -23,12 +25,10 @@ ActiveAdmin.register Product do
       row :in_Stock
       row :category_id
       row :brand_id
-      # row :images do |ad|
-      #   image_tag ad.images
-      # end
       row :images do |ad|
-        image_tag(ad.images)
+        image_tag ad.images
       end
+
     end
     active_admin_comments
   end
