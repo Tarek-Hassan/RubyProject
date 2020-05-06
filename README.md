@@ -15,6 +15,11 @@ Things you may want to cover:
 
 * Database initialization
 
+* Visit http://localhost:3000/admin and log in using
+* ------------------------ -
+* username:admin@admin.com -
+* pass:123456789           -
+* --------------------------
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
